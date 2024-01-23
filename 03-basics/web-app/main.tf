@@ -1,13 +1,13 @@
 terraform {
   # Assumes s3 bucket and dynamo DB table already set up
   # See /code/03-basics/aws-backend
-  backend "s3" {
-    bucket         = "devops-directive-santiagosaes1"
-    key            = "03-basics/web-app/terraform.tfstate"
-    region         = "us-east-1"
-    dynamodb_table = "terraform-state-locking"
-    encrypt        = true
-  }
+ # backend "s3" {
+#    bucket         = "devops-directive-santiagosaes1"
+ #   key            = "03-basics/web-app/terraform.tfstate"
+#    region         = "us-east-1"
+ #   dynamodb_table = "terraform-state-locking"
+ #   encrypt        = true
+ # }
 
   required_providers {
     aws = {
@@ -213,7 +213,7 @@ resource "aws_db_instance" "db_instance" {
   engine                     = "postgres"
   engine_version             = "12"
   instance_class             = "db.t2.micro"
-  name                       = "mydb"
+  # name                       = "mydb"
   username                   = "foo"
   password                   = "foobarbaz"
   skip_final_snapshot        = true

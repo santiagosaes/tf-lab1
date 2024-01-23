@@ -47,7 +47,7 @@ variable "db_user" {
 }
 
 variable "db_pass" {
-  description = "Password for DB"
+  description = "Password for DB (insert 8 ch)"
   type        = string
   sensitive   = true
 }

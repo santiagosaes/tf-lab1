@@ -1,11 +1,11 @@
 terraform {
-  backend "s3" {
-    bucket         = "devops-directive-tf-state"
-    key            = "04-variables-and-outputs/examples/terraform.tfstate"
-    region         = "us-east-1"
-    dynamodb_table = "terraform-state-locking"
-    encrypt        = true
-  }
+  #backend "s3" {
+   # bucket         = "devops-directive-tf-state"
+   # key            = "04-variables-and-outputs/examples/terraform.tfstate"
+   # region         = "us-east-1"
+   # dynamodb_table = "terraform-state-locking"
+   # encrypt        = true
+  #}
 
   required_providers {
     aws = {
@@ -39,7 +39,7 @@ resource "aws_db_instance" "db_instance" {
   engine              = "postgres"
   engine_version      = "12"
   instance_class      = "db.t2.micro"
-  name                = "mydb"
+  # name                = "mydb"
   username            = var.db_user
   password            = var.db_pass
   skip_final_snapshot = true
